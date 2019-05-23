@@ -60,6 +60,6 @@ public class DataAccessHelper {
             helper.displayError(e);
         }
         
-        helper.close();
+       
     }
 }
