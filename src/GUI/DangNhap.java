@@ -5,8 +5,12 @@
  */
 package GUI;
 
+import BUS.TaiKhoanBUS;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.util.ArrayList;
+import DTO.TaiKhoanDTO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +26,7 @@ public class DangNhap extends javax.swing.JFrame {
         this.setTitle("Đăng Nhập");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     /**
@@ -177,14 +182,15 @@ public class DangNhap extends javax.swing.JFrame {
 
     private void buttonOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonOKMouseClicked
         // TODO add your handling code here:
-        JFrame f=new JFrame();
-        f.setSize(300, 150);
-        f.add(new JLabel("Ban vua chon ok"));
-        f.setVisible(true);
+//        JFrame f=new JFrame();
+//        f.setSize(300, 150);
+//        f.add(new JLabel("Ban vua chon ok"));
+//        f.setVisible(true);
     }//GEN-LAST:event_buttonOKMouseClicked
 
     private void buttonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOKActionPerformed
         // TODO add your handling code here:
+        this.dangNhap();
     }//GEN-LAST:event_buttonOKActionPerformed
 
     /**
@@ -234,4 +240,20 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JPasswordField textPass;
     private javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
+
+    public void dangNhap() {
+        ArrayList<TaiKhoanDTO> dsTaiKhoan = new ArrayList<>();
+        dsTaiKhoan = TaiKhoanBUS.getDanhSachTaiKhoan();
+        
+        for(TaiKhoanDTO taiKhoan : dsTaiKhoan) {
+//            if(taiKhoan.getTenTK().equals(textUser.getText()) && taiKhoan.getMatKhau().equals(textPass.getText())) {
+//                JOptionPane.showMessageDialog(this, "Dang Nhap Thanh Cong");
+//            }
+            System.out.println(taiKhoan.getTenTK());
+        }
+        
+    }
+
+
+
 }

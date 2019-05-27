@@ -14,9 +14,12 @@ public class DataAccessHelper {
 
     public void open() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/QLRP","root","PTNhan01653817474");  
+//            Class.forName("com.mysql.jdbc.Driver");
+//            conn = DriverManager
+//                    .getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLRP;user=sa;password=sa");  
+
+            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=QLRP;user=sa;password=sa";
+            conn = DriverManager.getConnection(dbURL);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,24 +46,24 @@ public class DataAccessHelper {
         return rs;
     }
 
-    public static void main(String[] args) {
-        DataAccessHelper helper = new DataAccessHelper();
-        String sql = "SELECT * FROM NhanVien";
-        helper.open();
-        ResultSet rs = helper.excuteQuery(sql);
-        
-        try {
-            
-        while(rs.next()) {
-            System.out.println(rs.getString("MaNV"));
-            System.out.println(rs.getString("TenNV"));
-            
-        }
-        } catch(SQLException e) {
-            helper.displayError(e);
-        }
-        
-        
-        helper.close();
-    }
+//    public static void main(String[] args) {
+//        DataAccessHelper helper = new DataAccessHelper();
+//        String sql = "SELECT * FROM NhanVien";
+//        helper.open();
+//        ResultSet rs = helper.excuteQuery(sql);
+//        
+//        try {
+//            
+//        while(rs.next()) {
+//            System.out.println(rs.getString("MaNV"));
+//            System.out.println(rs.getString("TenNV"));
+//            
+//        }
+//        } catch(SQLException e) {
+//            helper.displayError(e);
+//        }
+//        
+//        
+//        helper.close();
+//    }
 }

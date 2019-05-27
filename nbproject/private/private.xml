@@ -3,25 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/Home.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/PhongChieuDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QuanLyBanVe.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QuanLyPhim.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QLKH.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/LoaiPhimDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/PhimDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QuanLyBanVe_Capnhattrangthai.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/TaiKhoanDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/VeBanDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/VeDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DTO/PhongChieuDTO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/LichChieuDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/NhanVienDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QLNV.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/util/DataAccessHelper.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/KhachHangDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/DAO/LoaiVeDAO.java</file>
-            <file>file:/Users/phannhan/NetBeansProjects/QuanLyRapPhim/src/GUI/QuanLyPhongchieu_SuaPhongChieu.java</file>
+            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLKH_Xoa.java</file>
+            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/Home.java</file>
+            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/VeBanDTO.java</file>
         </group>
     </open-files>
 </project-private>
