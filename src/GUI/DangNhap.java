@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.util.ArrayList;
 import DTO.TaiKhoanDTO;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +28,7 @@ public class DangNhap extends javax.swing.JFrame {
         this.setTitle("Đăng Nhập");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        this.addEvents();
         this.setVisible(true);
     }
 
@@ -47,7 +50,7 @@ public class DangNhap extends javax.swing.JFrame {
         textUser = new javax.swing.JTextField();
         JLabelPass = new javax.swing.JLabel();
         textPass = new javax.swing.JPasswordField();
-        buttunCancel = new javax.swing.JButton();
+        buttonCancel = new javax.swing.JButton();
         buttonOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,9 +74,9 @@ public class DangNhap extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(labelDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         labelDangNhap.getAccessibleContext().setAccessibleDescription("");
@@ -135,25 +138,15 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 5, 0, 51);
         jPanel2.add(textPass, gridBagConstraints);
 
-        buttunCancel.setText("Cancel");
+        buttonCancel.setText("Cancel");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(38, 105, 50, 0);
-        jPanel2.add(buttunCancel, gridBagConstraints);
+        jPanel2.add(buttonCancel, gridBagConstraints);
 
         buttonOK.setText("OK");
-        buttonOK.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonOKMouseClicked(evt);
-            }
-        });
-        buttonOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonOKActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -179,19 +172,6 @@ public class DangNhap extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonOKMouseClicked
-        // TODO add your handling code here:
-//        JFrame f=new JFrame();
-//        f.setSize(300, 150);
-//        f.add(new JLabel("Ban vua chon ok"));
-//        f.setVisible(true);
-    }//GEN-LAST:event_buttonOKMouseClicked
-
-    private void buttonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOKActionPerformed
-        // TODO add your handling code here:
-        this.dangNhap();
-    }//GEN-LAST:event_buttonOKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,8 +211,8 @@ public class DangNhap extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabelPass;
     private javax.swing.JLabel JLabelUser;
+    private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonOK;
-    private javax.swing.JButton buttunCancel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -241,19 +221,36 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
 
-    public void dangNhap() {
+    public int KTDangNhap() {
         ArrayList<TaiKhoanDTO> dsTaiKhoan = new ArrayList<>();
         dsTaiKhoan = TaiKhoanBUS.getDanhSachTaiKhoan();
-        
         for(TaiKhoanDTO taiKhoan : dsTaiKhoan) {
-//            if(taiKhoan.getTenTK().equals(textUser.getText()) && taiKhoan.getMatKhau().equals(textPass.getText())) {
-//                JOptionPane.showMessageDialog(this, "Dang Nhap Thanh Cong");
-//            }
-            System.out.println(taiKhoan.getTenTK());
+            if(taiKhoan.getTenTK().equals(textUser.getText()) && taiKhoan.getMatKhau().equals(textPass.getText())) {
+                { JOptionPane.showMessageDialog(this,"Đăng nhập thành công");
+                   return 1;
+                }
+            }
         }
-        
+        JOptionPane.showMessageDialog(this, "Đăng nhập thất bại! Yêu cầu nhập lại");     
+        return 0;
     }
-
-
-
+    
+ public void addEvents ()
+ {
+     buttonCancel.addActionListener(new ActionListener() {
+         
+         @Override
+         public void actionPerformed(ActionEvent e) {
+               System.exit(0);
+         }
+     });
+     buttonOK.addActionListener(new ActionListener() {
+         
+         @Override
+         public void actionPerformed(ActionEvent e) {
+             KTDangNhap();
+         }
+     });
+ }
+ 
 }

@@ -12,20 +12,19 @@ import java.util.ArrayList;
 public class TaiKhoanDAO {
        public static ArrayList<TaiKhoanDTO>TaiKhoanALL()
     {
-        ArrayList<TaiKhoanDTO>dsTaiKhoan = new ArrayList<TaiKhoanDTO>(); 
+        ArrayList<TaiKhoanDTO> dsTaiKhoan = new ArrayList<TaiKhoanDTO>(); 
         String sql = "select * from TaiKhoan"; 
         DataAccessHelper helper = new DataAccessHelper(); 
         try 
         {
             helper.open();
             ResultSet rs = helper.excuteQuery(sql); 
-            TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
             while(rs.next())
-            {
-                taiKhoan = new TaiKhoanDTO();
+            {   
+                TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
                 taiKhoan.setMaTK(rs.getString("MaTK"));
                 taiKhoan.setLoaiTK(rs.getString("LoaiTK"));
-                taiKhoan.setTenTK(rs.getString(rs.getString("TenTK")));
+                taiKhoan.setTenTK(rs.getString("TenTK"));
                 taiKhoan.setMatKhau(rs.getString("MatKhau"));
                 System.out.println(taiKhoan.getTenTK());
                 dsTaiKhoan.add(taiKhoan);

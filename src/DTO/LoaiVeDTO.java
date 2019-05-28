@@ -16,7 +16,7 @@ public class LoaiVeDTO {
     {
         return maLV;
     }
-    public void setMaLV()
+    public void setMaLV(String maLV)
     {
         this.maLV = maLV;
     }
@@ -24,7 +24,7 @@ public class LoaiVeDTO {
     {
         return tenLV;
     }
-    public void setTenLV()
+    public void setTenLV(String tenLV)
     {
         this.tenLV = tenLV;
     }

@@ -14,12 +14,9 @@ public class DataAccessHelper {
 
     public void open() {
         try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            conn = DriverManager
-//                    .getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLRP;user=sa;password=sa");  
-
-            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=QLRP;user=sa;password=sa";
-            conn = DriverManager.getConnection(dbURL);
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager
+                    .getConnection("jdbc:mysql://localhost:3306/qlrp","root","sasa");  
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -20,7 +20,7 @@ public class VeBanDTO {
     {
         return maVe;
     }
-    public void setMaVe()
+    public void setMaVe(String maVe)
     {
         this.maVe = maVe;
     }
@@ -28,7 +28,7 @@ public class VeBanDTO {
     {
         return maPhim;
     }
-    public void setMaPhim()
+    public void setMaPhim(String maPhim)
     {
         this.maPhim = maPhim;
     }
@@ -36,7 +36,7 @@ public class VeBanDTO {
     {
         return maPhong;
     }
-    public void setMaPhong()
+    public void setMaPhong(String maPhong)
     {
         this.maPhong = maPhong;
     }
@@ -44,7 +44,7 @@ public class VeBanDTO {
     {
         return tenPhim;
     }
-    public void setTenPhim()
+    public void setTenPhim(String tenPhim)
     {
         this.tenPhim = tenPhim;
     }
@@ -52,7 +52,7 @@ public class VeBanDTO {
     {
         return maKH;
     }
-    public void setMaKH()
+    public void setMaKH(String MaKH)
     {
         this.maKH = maKH;
     }

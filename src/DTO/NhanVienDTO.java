@@ -20,7 +20,7 @@ public class NhanVienDTO {
     {
         return maNV;
     }
-    public void setMaNV()
+    public void setMaNV(String maNV)
     {
         this.maNV = maNV;
     }
@@ -28,7 +28,7 @@ public class NhanVienDTO {
     {
         return tenNV;
     }
-    public void setTenNV()
+    public void setTenNV(String tenNV)
     {
         this.tenNV = tenNV;
     }
@@ -36,7 +36,7 @@ public class NhanVienDTO {
     {
         return gioiTinh;
     }
-    public void setGioiTinh()
+    public void setGioiTinh(String gioiTinh)
     {
         this.gioiTinh = gioiTinh;
     }
@@ -44,7 +44,7 @@ public class NhanVienDTO {
     {
         return cMND;
     }
-    public void setCMND()
+    public void setCMND(String cMND)
     {
         this.cMND = cMND;
     }
@@ -52,7 +52,7 @@ public class NhanVienDTO {
     {
         return diaChi;
     }
-    public void setDiaChi()
+    public void setDiaChi(String diaChi)
     {
         this.diaChi = diaChi;
     }
@@ -60,7 +60,7 @@ public class NhanVienDTO {
     {
         return maTK;
     }
-    public void setMaTK()
+    public void setMaTK(String maTK)
     {
         this.maTK = maTK;
     }

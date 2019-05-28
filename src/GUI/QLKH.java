@@ -6,6 +6,7 @@
 package GUI;
 
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,6 +21,8 @@ public class QLKH extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        initComponents();
+        DefaultTableModel model= (DefaultTableModel) tableQLKH.getModel();
     }
 
     /**
@@ -76,13 +79,13 @@ public class QLKH extends javax.swing.JFrame {
         tableQLKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         tableQLKH.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã khách hàng", "Giới tính", "Họ tên", "Địa chỉ", "Số điện thoại"
             }
         ));
         jScrollPane1.setViewportView(tableQLKH);
@@ -226,4 +229,8 @@ public class QLKH extends javax.swing.JFrame {
     private javax.swing.JTable tableQLKH;
     private javax.swing.JTextField textTimKiemQLKH;
     // End of variables declaration//GEN-END:variables
+
+    
+
+
 }

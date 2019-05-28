@@ -18,7 +18,7 @@ public class VeDTO {
     {
         return maVe;
     }
-    public void setMaVe()
+    public void setMaVe(String maVe)
     {
         this.maVe = maVe;
     }
@@ -26,7 +26,7 @@ public class VeDTO {
     {
         return giaVe;
     }
-    public void setGiaVe()
+    public void setGiaVe(int giaVe)
     {
         this.giaVe = giaVe;
     }
@@ -34,7 +34,7 @@ public class VeDTO {
     {
         return soLuong;
     }
-    public void setSoLuong()
+    public void setSoLuong(int soLuong)
     {
         this.soLuong = soLuong;
     }
@@ -42,7 +42,7 @@ public class VeDTO {
     {
         return maLV;
     }
-    public void setMaLV()
+    public void setMaLV(String maLV)
     {
         this.maLV = maLV;
     }

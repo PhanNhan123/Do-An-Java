@@ -19,7 +19,7 @@ public class KhachHangDTO {
     {
         return maKH;
     }
-    public void setMaKH()
+    public void setMaKH(String maKH)
     {
         this.maKH = maKH;
     }
@@ -27,21 +27,21 @@ public class KhachHangDTO {
     {
         return tenKH;
     }
-    public void setTenKH()
+    public void setTenKH(String tenKH)
     {
         this.tenKH = tenKH;
     }public String getGioiTinh()
     {
         return gioiTinh;
     }
-    public void setGioiTinh()
+    public void setGioiTinh(String gioiTinh)
     {
         this.gioiTinh = gioiTinh;
     }public String getDiaChi()
     {
         return diaChi;
     }
-    public void setDiaChi()
+    public void setDiaChi(String diaChi)
     {
         this.diaChi =diaChi;
     }
@@ -49,7 +49,7 @@ public class KhachHangDTO {
     {
         return sDT;
     }
-    public void setSDT()
+    public void setSDT(String sDT)
     {
         this.sDT = sDT;
     }
