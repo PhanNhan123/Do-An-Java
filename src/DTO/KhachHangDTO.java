@@ -53,4 +53,5 @@ public class KhachHangDTO {
     {
         this.sDT = sDT;
     }
+    
 }

@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import DTO.KhachHangDTO;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,8 +16,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Dell
  */
 public class QLKH extends javax.swing.JFrame {
-
-    /**
+private ArrayList<KhachHangDTO> dskh;
+DefaultTableModel  model;    /**
      * Creates new form QLKH
      */
     public QLKH() {
@@ -22,8 +25,11 @@ public class QLKH extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         initComponents();
-        DefaultTableModel model= (DefaultTableModel) tableQLKH.getModel();
+        dskh = new ArrayList<>();
+        model = (DefaultTableModel) tableQLKH.getModel();
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,6 +100,11 @@ public class QLKH extends javax.swing.JFrame {
 
         buttonTimQLKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonTimQLKH.setText("Tìm");
+        buttonTimQLKH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTimQLKHActionPerformed(evt);
+            }
+        });
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonThem.setText("Thêm");
@@ -180,6 +191,10 @@ public class QLKH extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonTimQLKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimQLKHActionPerformed
+      showResultQLKH();
+    }//GEN-LAST:event_buttonTimQLKHActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +226,7 @@ public class QLKH extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new QLKH().setVisible(true);
+                
             }
         });
     }
@@ -232,5 +248,44 @@ public class QLKH extends javax.swing.JFrame {
 
     
 
+//    private void loadDataIntoJTable(){
+//        DefaultTableModel model = new DefaultTableModel();
+//        //Set Column Title
+//        Vector column = new Vector();
+//        column.add("Student ID");
+//        column.add("Student Name");
+//        column.add("Age");
+//        column.add("Address");
+//        column.add("DIACHI");
+//        model.setColumnIdentifiers(column);
+//        ArrayList<KhachHangDTO> dskh = new ArrayList<>();
+//        for (KhachHangDTO kht :dskh) {
+// 
+//            
+//            Vector row = new Vector();
+//            row.add(kht.getMaKH());
+//            row.add(kht.getGioiTinh());
+//            row.add(kht.getTenKH());
+//            row.add(kht.getSDT());
+//            row.add(kht.getDiaChi());
+//            model.addRow(row);
+//        }
+//        tableQLKH.setModel(model);
+//    }
+    
+    
+public void showResultQLKH(){
+     KhachHangDTO kht = dskh.get(dskh.size());
+     model.addRow(new Object[]{
+         kht.getMaKH(), kht.getGioiTinh(), kht.getTenKH(), kht.getDiaChi(), kht.getSDT()
+     });
 
+
+}
+//    public void showTable(){
+//    for(KhachHangDTO kht :dskh)
+//    {
+//        tableQLKH.
+//    }
+//    }
 }

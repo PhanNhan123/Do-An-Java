@@ -2,7 +2,7 @@ package util;
 
 import java.sql.*;
 
-public class DataAccessHelper {
+public class DataAccessHelper {//Lop de dong mo connection
     public Connection conn = null;
 
 
@@ -14,9 +14,9 @@ public class DataAccessHelper {
 
     public void open() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/qlrp","root","sasa");  
+                  .getConnection("jdbc:mysql://localhost:3306/qlrp","root","sasa");  //Sua code database , user va password o day nha :)
         } catch (Exception e) {
             e.printStackTrace();
         }

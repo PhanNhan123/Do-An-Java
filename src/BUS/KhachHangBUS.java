@@ -20,11 +20,18 @@ public class KhachHangBUS {
     {
         return KhachHangDAO.KhachHangALL();
     }
+    
     public void addKhachHangBUS(KhachHangDTO kh)
     {
         KhachHangDAO khd=new KhachHangDAO();
         khd.addKhachHangDAO(kh);
 
+    }
+    public boolean KTTrong(KhachHangDTO kh)
+    {
+        if(kh.getMaKH().length()==0||kh.getGioiTinh().length()==0||kh.getDiaChi().length()==0||kh.getSDT().length()==0||kh.getTenKH().length()==0)
+            return true;
+        return false;
     }
 
 

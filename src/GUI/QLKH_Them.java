@@ -6,7 +6,10 @@
 package GUI;
 import BUS.KhachHangBUS;
 import DTO.KhachHangDTO;
-import javax.swing.JFrame;
+import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -208,11 +211,11 @@ public class QLKH_Them extends javax.swing.JFrame {
 
     private void buttonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThemActionPerformed
         // TODO add your handling code here:
-        this.addKhachHang();     
+        this.addKhachHang();     //Xu ly su kien Them
     }//GEN-LAST:event_buttonThemActionPerformed
 
     private void buttonHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHuyActionPerformed
-       System.exit(1);
+       System.exit(1); //Xu ly su kien thoat
     }//GEN-LAST:event_buttonHuyActionPerformed
     
     /**
@@ -268,16 +271,33 @@ public class QLKH_Them extends javax.swing.JFrame {
     private javax.swing.JTextField textSDT;
     private javax.swing.JTextField textTenKH;
     // End of variables declaration//GEN-END:variables
-    public void addKhachHang()
+    public int addKhachHang()
     {
+        ArrayList <KhachHangDTO> dskh=new ArrayList<>();
+        dskh=KhachHangBUS.getDanhSachKhachHang();//Lay danh sach khach hang cho vao dskh
         KhachHangBUS khb=new KhachHangBUS();
-        KhachHangDTO kh=new KhachHangDTO();
+        KhachHangDTO kh=new KhachHangDTO();//Tao 1 khach hang moi va gan cac gia tri vao no
         kh.setMaKH(textMaKH.getText());
         kh.setGioiTinh(textGioiTinh.getText());
         kh.setTenKH(textTenKH.getText());
         kh.setDiaChi(textDiaChi.getText());
         kh.setSDT(textSDT.getText());
+        if(khb.KTTrong(kh)==true){
+            JOptionPane.showMessageDialog(null, "Không được để trống các trường dữ liệu");
+            return 0;
+        }
+        for(KhachHangDTO kht :dskh)//Kiem tra khach hang moi co trùng với các khach hàng cũ k 
+        {
+           
+            if(kht.getMaKH().equals(kh.getMaKH()))
+            {
+                JOptionPane.showMessageDialog(null, "Thêm thất bại! Nhập trùng MaKH khóa chính");
+                return 0;
+            } 
+        }
         khb.addKhachHangBUS(kh);
+        return 1;
+        
     }
     
     

@@ -19,7 +19,7 @@ public class KhachHangDAO {
             KhachHangDTO khachHang=new KhachHangDTO();
             while(rs.next())
             {
-                khachHang =null;
+                
                 khachHang.setMaKH(rs.getString("MaKH"));
                 khachHang.setGioiTinh(rs.getString("GioiTinh"));
                 khachHang.setTenKH(rs.getString("TenKH"));
@@ -36,14 +36,14 @@ public class KhachHangDAO {
             }      
         return dsKhachHang; 
     }
-            public boolean addKhachHangDAO(KhachHangDTO kh)
+        public boolean addKhachHangDAO(KhachHangDTO kh)
         {
             
             String sql="insert into KhachHang(MaKH,GioiTinh,TenKH,DiaChi,SDT) values(?,?,?,?,?)";
-            
             DataAccessHelper helper=new DataAccessHelper();
-          
+   
             try {
+                helper.open();
                 PreparedStatement ps= helper.conn.prepareStatement(sql);
                 
                 ps.setString(1, kh.getMaKH());
@@ -51,12 +51,17 @@ public class KhachHangDAO {
                 ps.setString(3, kh.getTenKH());
                 ps.setString(4, kh.getDiaChi());
                 ps.setString(5, kh.getSDT());
-                helper.excuteQuery(sql);
-                return ps.executeUpdate()>0;
+                
+               ps.execute();
+               helper.close();
+        
+               return true;
             } catch (SQLException e) {
             }
             return false;
-        }}
+        }
+    
+}
 
 //            helper.open();
 //        ResultSet rs = helper.excuteQuery(sql);
