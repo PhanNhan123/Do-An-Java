@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package GUI;
-import DAO.KhachHangDAO;
+import BUS.KhachHangBUS;
 import DTO.KhachHangDTO;
 import javax.swing.JFrame;
 
@@ -270,15 +270,14 @@ public class QLKH_Them extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public void addKhachHang()
     {
-        KhachHangDAO khd=new KhachHangDAO();
+        KhachHangBUS khb=new KhachHangBUS();
         KhachHangDTO kh=new KhachHangDTO();
         kh.setMaKH(textMaKH.getText());
         kh.setGioiTinh(textGioiTinh.getText());
         kh.setTenKH(textTenKH.getText());
         kh.setDiaChi(textDiaChi.getText());
         kh.setSDT(textSDT.getText());
-        khd.addKhachHangDAO(kh);
-        
+        khb.addKhachHangBUS(kh);
     }
     
     

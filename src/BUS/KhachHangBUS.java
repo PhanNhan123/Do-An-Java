@@ -6,7 +6,10 @@
 package BUS;
 import DAO.KhachHangDAO;
 import DTO.KhachHangDTO;
+
+
 import java.util.ArrayList;
+
 
 /**
  *
@@ -17,4 +20,12 @@ public class KhachHangBUS {
     {
         return KhachHangDAO.KhachHangALL();
     }
+    public void addKhachHangBUS(KhachHangDTO kh)
+    {
+        KhachHangDAO khd=new KhachHangDAO();
+        khd.addKhachHangDAO(kh);
+
+    }
+
+
 }

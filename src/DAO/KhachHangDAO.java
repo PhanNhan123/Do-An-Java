@@ -36,25 +36,46 @@ public class KhachHangDAO {
             }      
         return dsKhachHang; 
     }
-        public boolean addKhachHangDAO(KhachHangDTO kh)
+            public boolean addKhachHangDAO(KhachHangDTO kh)
         {
             
-            String sql="inser into KhachHang(MaKH,GioiTinh,TenKH,DiaChi,SDT) values(?,?,?,?,?)";
+            String sql="insert into KhachHang(MaKH,GioiTinh,TenKH,DiaChi,SDT) values(?,?,?,?,?)";
             
             DataAccessHelper helper=new DataAccessHelper();
-            
+          
             try {
                 PreparedStatement ps= helper.conn.prepareStatement(sql);
+                
                 ps.setString(1, kh.getMaKH());
                 ps.setString(2, kh.getGioiTinh());
                 ps.setString(3, kh.getTenKH());
                 ps.setString(4, kh.getDiaChi());
                 ps.setString(5, kh.getSDT());
+                helper.excuteQuery(sql);
                 return ps.executeUpdate()>0;
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (SQLException e) {
             }
             return false;
-        }
+        }}
+
+//            helper.open();
+//        ResultSet rs = helper.excuteQuery(sql);
+//        
+//        try {
+//            
+//        while(rs.next()) {
+//            System.out.println(rs.getString("MaNV"));
+//            System.out.println(rs.getString("TenNV"));
+//            
+//        }
+//        } catch(SQLException e) {
+//            helper.displayError(e);
+//        }
+//        
+//        
+//        helper.close();
+//        }
+            
+            
+            
  
-}
