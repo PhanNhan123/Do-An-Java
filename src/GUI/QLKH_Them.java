@@ -50,7 +50,7 @@ public class QLKH_Them extends javax.swing.JFrame {
         buttonThem = new javax.swing.JButton();
         buttonHuy = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        textGioiTinh = new javax.swing.JTextField();
+        jComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Thêm nhân viên");
@@ -121,7 +121,8 @@ public class QLKH_Them extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel10.setText("Giới tính:");
 
-        textGioiTinh.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam ", "Nu" }));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -141,19 +142,19 @@ public class QLKH_Them extends javax.swing.JFrame {
                     .addComponent(textTenKH, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(textDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(textSDT, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(textGioiTinh))
+                    .addComponent(jComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(51, 51, 51))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(167, 167, 167)
                         .addComponent(buttonThem)
-                        .addGap(56, 56, 56)
-                        .addComponent(buttonHuy))
+                        .addGap(42, 42, 42)
+                        .addComponent(buttonHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,18 +171,18 @@ public class QLKH_Them extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(textTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
+                        .addGap(53, 53, 53)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(textGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(63, 63, 63)
+                            .addComponent(jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
                         .addComponent(jLabel8))
                     .addComponent(textDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(textSDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonThem)
                     .addComponent(buttonHuy))
@@ -215,7 +216,8 @@ public class QLKH_Them extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonThemActionPerformed
 
     private void buttonHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHuyActionPerformed
-       System.exit(1); //Xu ly su kien thoat
+       this.dispose();
+        //Xu ly su kien thoat
     }//GEN-LAST:event_buttonHuyActionPerformed
     
     /**
@@ -256,6 +258,7 @@ public class QLKH_Them extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonHuy;
     private javax.swing.JButton buttonThem;
+    private javax.swing.JComboBox<String> jComboBox;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -266,19 +269,18 @@ public class QLKH_Them extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField textDiaChi;
-    private javax.swing.JTextField textGioiTinh;
     private javax.swing.JTextField textMaKH;
     private javax.swing.JTextField textSDT;
     private javax.swing.JTextField textTenKH;
     // End of variables declaration//GEN-END:variables
     public int addKhachHang()
     {
-        ArrayList <KhachHangDTO> dskh=new ArrayList<>();
-        dskh=KhachHangBUS.getDanhSachKhachHang();//Lay danh sach khach hang cho vao dskh
+//        ArrayList <KhachHangDTO> dskh=new ArrayList<>();
+//        dskh=KhachHangBUS.getDanhSachKhachHang();//Lay danh sach khach hang cho vao dskh
         KhachHangBUS khb=new KhachHangBUS();
         KhachHangDTO kh=new KhachHangDTO();//Tao 1 khach hang moi va gan cac gia tri vao no
         kh.setMaKH(textMaKH.getText());
-        kh.setGioiTinh(textGioiTinh.getText());
+        kh.setGioiTinh(jComboBox.getSelectedItem().toString());
         kh.setTenKH(textTenKH.getText());
         kh.setDiaChi(textDiaChi.getText());
         kh.setSDT(textSDT.getText());
@@ -286,17 +288,21 @@ public class QLKH_Them extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Không được để trống các trường dữ liệu");
             return 0;
         }
-        for(KhachHangDTO kht :dskh)//Kiem tra khach hang moi co trùng với các khach hàng cũ k 
-        {
-           
-            if(kht.getMaKH().equals(kh.getMaKH()))
+//        for(KhachHangDTO kht :dskh)//Kiem tra khach hang moi co trùng với các khach hàng cũ k 
+//        {
+            if(khb.KTTrung(kh))
             {
                 JOptionPane.showMessageDialog(null, "Thêm thất bại! Nhập trùng MaKH khóa chính");
                 return 0;
             } 
+        
+        if(khb.addKhachHangBUS(kh))
+        {
+            JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
+            return 1;
         }
-        khb.addKhachHangBUS(kh);
-        return 1;
+        JOptionPane.showMessageDialog(null, "Thêm khách hàng thất bại");
+        return 0;
         
     }
     

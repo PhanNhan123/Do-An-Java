@@ -5,21 +5,24 @@ import java.sql.PreparedStatement;
 import util.DataAccessHelper; 
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
+import java.sql.Statement;
 import java.util.ArrayList; 
 public class KhachHangDAO {
         public static ArrayList<KhachHangDTO> KhachHangALL()
     {
         ArrayList<KhachHangDTO>dsKhachHang = new ArrayList<KhachHangDTO>(); 
-        String sql = " select * from KhachHang"; 
-        DataAccessHelper helper = new DataAccessHelper(); 
+         
         try 
         {
+            String sql = " select * from KhachHang"; 
+            DataAccessHelper helper = new DataAccessHelper();
             helper.open();
+            
             ResultSet rs = helper.excuteQuery(sql); 
-            KhachHangDTO khachHang=new KhachHangDTO();
+            
             while(rs.next())
             {
-                
+                KhachHangDTO khachHang=new KhachHangDTO();
                 khachHang.setMaKH(rs.getString("MaKH"));
                 khachHang.setGioiTinh(rs.getString("GioiTinh"));
                 khachHang.setTenKH(rs.getString("TenKH"));
@@ -27,13 +30,11 @@ public class KhachHangDAO {
                 khachHang.setSDT(rs.getString("SDT"));
                 dsKhachHang.add(khachHang);
             }
-        }catch (SQLException ex)
+            helper.close();
+        }catch (Exception e)
         {
-            helper.displayError(ex);
-        }finally 
-           {
-               helper.close(); 
-            }      
+            System.out.println(e.getMessage());
+        }     
         return dsKhachHang; 
     }
         public boolean addKhachHangDAO(KhachHangDTO kh)
@@ -60,9 +61,26 @@ public class KhachHangDAO {
             }
             return false;
         }
-    
-}
+      public boolean deleteKhachHang(String a){
+      String sql = "delete from khachhang where MaKH = '"+a+"'"; 
+      DataAccessHelper helper = new DataAccessHelper();
+      
+      try
+      {
+      helper.open();
+      Statement st=helper.conn.createStatement();
+      st.executeUpdate(sql);
+      helper.close();
+      return true;
+      }
+      catch(SQLException e)
+      {
+              
+      }
+            return false;
+      }
 
+      
 //            helper.open();
 //        ResultSet rs = helper.excuteQuery(sql);
 //        
@@ -82,5 +100,5 @@ public class KhachHangDAO {
 //        }
             
             
-            
+}     
  

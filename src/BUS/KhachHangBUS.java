@@ -16,15 +16,17 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class KhachHangBUS {
-    public static ArrayList<KhachHangDTO> getDanhSachKhachHang()
-    {
+    public ArrayList<KhachHangDTO> getDanhSachKhachHang()
+    {   
         return KhachHangDAO.KhachHangALL();
     }
     
-    public void addKhachHangBUS(KhachHangDTO kh)
+    public boolean addKhachHangBUS(KhachHangDTO kh)
     {
         KhachHangDAO khd=new KhachHangDAO();
-        khd.addKhachHangDAO(kh);
+        if(khd.addKhachHangDAO(kh))
+            return true;
+        return false;
 
     }
     public boolean KTTrong(KhachHangDTO kh)
@@ -33,6 +35,22 @@ public class KhachHangBUS {
             return true;
         return false;
     }
-
-
+    public boolean KTTrung(KhachHangDTO kh)
+    {
+        ArrayList <KhachHangDTO> dskh= new ArrayList<>();
+        dskh=this.getDanhSachKhachHang();
+        for(KhachHangDTO kht :dskh)//Kiem tra khach hang moi co trùng với các khach hàng cũ k 
+        {
+            if(kht.getMaKH().equals(kh.getMaKH()))
+                return true;
+        }
+        return false;
+    }
+    public boolean deleteKhachHangBUS(String a){
+    
+    KhachHangDAO khd = new KhachHangDAO();
+    if(khd.deleteKhachHang(a))
+        return true;
+    return false;
+    }
 }

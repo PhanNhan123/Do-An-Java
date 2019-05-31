@@ -6,27 +6,44 @@
 package GUI;
 
 import DTO.KhachHangDTO;
+import BUS.KhachHangBUS;
+import GUI.QLKH_Them;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.plaf.OptionPaneUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 
 /**
  *
  * @author Dell
  */
 public class QLKH extends javax.swing.JFrame {
-private ArrayList<KhachHangDTO> dskh;
-DefaultTableModel  model;    /**
-     * Creates new form QLKH
-     */
+    private ArrayList<KhachHangDTO> dskh;
+    public static String maKH;
+    public static DefaultTableModel model =new DefaultTableModel();
+    
+//    DefaultTableModel  model;    /**
+//     * Creates new form QLKH
+//     */
     public QLKH() {
+        
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        loadData();
         initComponents();
-        dskh = new ArrayList<>();
-        model = (DefaultTableModel) tableQLKH.getModel();
+//        dskh = new KhachHangBUS().getDanhSachKhachHang();
+//        model = (DefaultTableModel) tableQLKH.getModel();
+//        tableQLKH.setModel(model);
+//        model.setColumnIdentifiers(new Object[]{"Mã khách hàng","Giới tính","Họ tên","Địa chỉ","Số điện thoại"});
+//        model.addRow(new Object[]{"KH001","Luong","Nam","TPHCM","015555555"});
+//        showTableQLKH();
+       
         
     }
     
@@ -45,13 +62,13 @@ DefaultTableModel  model;    /**
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableQLKH = new javax.swing.JTable();
         textTimKiemQLKH = new javax.swing.JTextField();
         buttonTimQLKH = new javax.swing.JButton();
         buttonThem = new javax.swing.JButton();
         buttonXoa = new javax.swing.JButton();
         buttonSua = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản lý khách hàng");
@@ -79,22 +96,10 @@ DefaultTableModel  model;    /**
                 .addGap(22, 22, 22))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Danh sách khách hàng");
-
-        tableQLKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        tableQLKH.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Mã khách hàng", "Giới tính", "Họ tên", "Địa chỉ", "Số điện thoại"
-            }
-        ));
-        jScrollPane1.setViewportView(tableQLKH);
 
         textTimKiemQLKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
@@ -108,12 +113,43 @@ DefaultTableModel  model;    /**
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonThem.setText("Thêm");
+        buttonThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThemActionPerformed(evt);
+            }
+        });
 
         buttonXoa.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonXoa.setText("Xóa");
+        buttonXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonXoaActionPerformed(evt);
+            }
+        });
 
         buttonSua.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonSua.setText("Sửa");
+        buttonSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSuaActionPerformed(evt);
+            }
+        });
+
+        table1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        table1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(table1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -128,10 +164,12 @@ DefaultTableModel  model;    /**
                 .addComponent(buttonSua)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
                         .addComponent(textTimKiemQLKH, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,8 +186,8 @@ DefaultTableModel  model;    /**
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textTimKiemQLKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonTimQLKH, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonSua)
@@ -192,8 +230,33 @@ DefaultTableModel  model;    /**
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonTimQLKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimQLKHActionPerformed
-      showResultQLKH();
+      
     }//GEN-LAST:event_buttonTimQLKHActionPerformed
+    
+    private void buttonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThemActionPerformed
+        QLKH_Them frame =new QLKH_Them();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(this);
+    }//GEN-LAST:event_buttonThemActionPerformed
+
+    private void buttonXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonXoaActionPerformed
+     DefaultTableModel model=(DefaultTableModel) table1.getModel();
+     String a = (String) model.getValueAt(table1.getSelectedRow(), 0);
+
+//     new KhachHangBUS().deleteKhachHangBUS(a);
+     
+    }//GEN-LAST:event_buttonXoaActionPerformed
+
+    private void buttonSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSuaActionPerformed
+        loadData();
+    }//GEN-LAST:event_buttonSuaActionPerformed
+
+    private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
+        table1.setModel(model);
+        int a=table1.getRowCount();//Lay cac dong trong bang ra thi duoc
+        int index=table1.getSelectedColumn();//Lay vi tri cua dong trong bang thi k dc
+        System.out.print(a+" "+index);
+    }//GEN-LAST:event_table1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -241,47 +304,49 @@ DefaultTableModel  model;    /**
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tableQLKH;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable table1;
     private javax.swing.JTextField textTimKiemQLKH;
     // End of variables declaration//GEN-END:variables
 
-    
+   
 
-//    private void loadDataIntoJTable(){
-//        DefaultTableModel model = new DefaultTableModel();
-//        //Set Column Title
-//        Vector column = new Vector();
-//        column.add("Student ID");
-//        column.add("Student Name");
-//        column.add("Age");
-//        column.add("Address");
-//        column.add("DIACHI");
-//        model.setColumnIdentifiers(column);
-//        ArrayList<KhachHangDTO> dskh = new ArrayList<>();
-//        for (KhachHangDTO kht :dskh) {
-// 
-//            
-//            Vector row = new Vector();
-//            row.add(kht.getMaKH());
-//            row.add(kht.getGioiTinh());
-//            row.add(kht.getTenKH());
-//            row.add(kht.getSDT());
-//            row.add(kht.getDiaChi());
-//            model.addRow(row);
-//        }
-//        tableQLKH.setModel(model);
+    private void loadData(){//Load toan bo du lieu vao table
+        table1.removeAll();
+       String []colsName = {"Mã Khách Hàng","Giới tính","Họ tên","Địa chỉ","Số điện thoại"};
+       model.setColumnIdentifiers(colsName);
+       
+        dskh = new KhachHangBUS().getDanhSachKhachHang();
+        for(KhachHangDTO kht :dskh)
+        {
+            String row[];
+            row = new String[5];
+            row[0] = kht.getMaKH();
+            row[1] = kht.getGioiTinh();
+            row[2] = kht.getTenKH();
+            row[3] = kht.getDiaChi();
+            row[4] = kht.getSDT();
+            model.addRow(row);
+            
+        }
+        table1.setModel(model); 
+    }
+//    public void showResult(){
+//    dskh= new KhachHangBUS().getDanhSachKhachHang();
+//    KhachHangDTO a=dskh.get(dskh.size()-1);
+//    model.addRow(new Object[]{a.getMaKH(),a.getGioiTinh(),a.getTenKH(),a.getDiaChi(),a.getSDT()
+//    });
+//    
 //    }
     
-    
-public void showResultQLKH(){
-     KhachHangDTO kht = dskh.get(dskh.size());
-     model.addRow(new Object[]{
-         kht.getMaKH(), kht.getGioiTinh(), kht.getTenKH(), kht.getDiaChi(), kht.getSDT()
-     });
-
-
-}
+//public void showTableQLKH(){
+//     for(KhachHangDTO kht :this.dskh)
+//     model.addRow(new Object[]{
+//         kht.getMaKH(), kht.getGioiTinh(), kht.getTenKH(), kht.getDiaChi(), kht.getSDT()
+//     });
+//
+//
+//}
 //    public void showTable(){
 //    for(KhachHangDTO kht :dskh)
 //    {
