@@ -5,7 +5,10 @@
  */
 package GUI;
 
+import BUS.NhanVienBUS;
+import DTO.NhanVienDTO;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,7 +24,19 @@ public class QLNV_Sua extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
-
+    public QLNV_Sua(NhanVienDTO a) {
+        initComponents();
+        this.textMaNV.setText(a.getMaNV());
+        this.textTenNV.setText(a.getTenNV());
+        this.textDiaChi.setText(a.getDiaChi());
+        this.textCMND.setText(a.getCMND());
+        this.jComboBox.setSelectedItem(a.getGioiTinh());
+        this.textMaTK.setText(a.getMaTK());
+        this.textMaNV.setEditable(false);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,10 +58,10 @@ public class QLNV_Sua extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         textMaNV = new javax.swing.JTextField();
         textTenNV = new javax.swing.JTextField();
-        textGioiTinh = new javax.swing.JTextField();
         textCMND = new javax.swing.JTextField();
         textDiaChi = new javax.swing.JTextField();
         textMaTK = new javax.swing.JTextField();
+        jComboBox = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         buttonOKCN = new javax.swing.JButton();
         buttonHuyCN = new javax.swing.JButton();
@@ -102,18 +117,14 @@ public class QLNV_Sua extends javax.swing.JFrame {
 
         textTenNV.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        textGioiTinh.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-
         textCMND.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
         textDiaChi.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        textDiaChi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textDiaChiActionPerformed(evt);
-            }
-        });
 
         textMaTK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+
+        jComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nu" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -121,16 +132,6 @@ public class QLNV_Sua extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel3)
-                        .addGap(129, 129, 129)
-                        .addComponent(textTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel4)
-                        .addGap(170, 170, 170)
-                        .addComponent(textGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addComponent(jLabel5)
@@ -153,7 +154,16 @@ public class QLNV_Sua extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(129, 129, 129)
-                                .addComponent(textMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(textMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(129, 129, 129)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                            .addComponent(jComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(85, 85, 85))
         );
         jPanel3Layout.setVerticalGroup(
@@ -173,12 +183,10 @@ public class QLNV_Sua extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(textTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(37, 37, 37)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(textGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(46, 46, 46)
+                    .addComponent(jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -257,16 +265,13 @@ public class QLNV_Sua extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textDiaChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDiaChiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textDiaChiActionPerformed
-
     private void buttonOKCNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOKCNActionPerformed
-        // TODO add your handling code here:
+        if(this.updateNhanVien()==1)
+            this.dispose();
     }//GEN-LAST:event_buttonOKCNActionPerformed
 
     private void buttonHuyCNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHuyCNActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_buttonHuyCNActionPerformed
 
     /**
@@ -305,10 +310,9 @@ public class QLNV_Sua extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonHuy;
     private javax.swing.JButton buttonHuyCN;
-    private javax.swing.JButton buttonOK;
     private javax.swing.JButton buttonOKCN;
+    private javax.swing.JComboBox<String> jComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -319,13 +323,36 @@ public class QLNV_Sua extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField textCMND;
     private javax.swing.JTextField textDiaChi;
-    private javax.swing.JTextField textGioiTinh;
     private javax.swing.JTextField textMaNV;
     private javax.swing.JTextField textMaTK;
     private javax.swing.JTextField textTenNV;
     // End of variables declaration//GEN-END:variables
+
+    private int updateNhanVien() {
+        NhanVienBUS khb=new NhanVienBUS();
+       NhanVienDTO kh=new NhanVienDTO();//Tao 1 khach hang moi va gan cac gia tri vao no
+        kh.setMaNV(textMaNV.getText());
+        kh.setGioiTinh(jComboBox.getSelectedItem().toString());
+        kh.setTenNV(textTenNV.getText());
+        kh.setDiaChi(textDiaChi.getText());
+        kh.setCMND(textCMND.getText());
+        kh.setMaTK(textMaTK.getText());
+        if(khb.KTTrong(kh)){
+            JOptionPane.showMessageDialog(null, "Không được để trống ");
+            return 0;
+        }
+
+        
+        if(khb.updateNhanVienBUS(kh))
+        {
+            JOptionPane.showMessageDialog(null, "Cập nhật khách hàng thành công");
+            
+            return 1;
+        }
+        JOptionPane.showMessageDialog(null, "Cập nhật khách hàng thất bại");
+        return 0;
+    }
 }

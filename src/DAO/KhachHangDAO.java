@@ -79,7 +79,53 @@ public class KhachHangDAO {
       }
             return false;
       }
-
+      public static ArrayList<KhachHangDTO> SearchKhachHang(String a)
+    {
+        ArrayList<KhachHangDTO>dsKhachHang = new ArrayList<KhachHangDTO>(); 
+         
+        try 
+        {
+            String sql = " select * from KhachHang where MaKH='"+a+"'"; 
+            DataAccessHelper helper = new DataAccessHelper();
+            helper.open();
+            
+            ResultSet rs = helper.excuteQuery(sql); 
+            
+            while(rs.next())
+            {
+                KhachHangDTO khachHang=new KhachHangDTO();
+                khachHang.setMaKH(rs.getString("MaKH"));
+                khachHang.setGioiTinh(rs.getString("GioiTinh"));
+                khachHang.setTenKH(rs.getString("TenKH"));
+                khachHang.setDiaChi(rs.getString("DiaChi"));
+                khachHang.setSDT(rs.getString("SDT"));
+                dsKhachHang.add(khachHang);
+            }
+            helper.close();
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }     
+        return dsKhachHang; 
+    }
+ public boolean updateKhachHang(KhachHangDTO a){
+      String sql = "update khachhang set GioiTinh='"+a.getGioiTinh()+"', TenKH='"+a.getTenKH()+"',DiaChi='"+a.getDiaChi()+"',SDT='"+a.getSDT()+"' where MaKH ='"+a.getMaKH()+"'"; 
+      DataAccessHelper helper = new DataAccessHelper();
+      
+      try
+      {
+      helper.open();
+      Statement st=helper.conn.createStatement();
+      st.executeUpdate(sql);
+      helper.close();
+      return true;
+      }
+      catch(SQLException e)
+      {
+              
+      }
+            return false;
+      }
       
 //            helper.open();
 //        ResultSet rs = helper.excuteQuery(sql);

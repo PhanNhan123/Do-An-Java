@@ -5,7 +5,19 @@
  */
 package GUI;
 
+import BUS.NhanVienBUS;
+import DTO.NhanVienDTO;
 import javax.swing.JFrame;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.plaf.OptionPaneUI;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -13,6 +25,9 @@ import javax.swing.JFrame;
  */
 public class QLNV extends javax.swing.JFrame {
 
+     private ArrayList<NhanVienDTO> dsnv;
+    public static String maNV;
+    public static DefaultTableModel model =new DefaultTableModel();
     /**
      * Creates new form QuanLyNhanVien
      */
@@ -20,6 +35,7 @@ public class QLNV extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+         loadData(dsnv = new NhanVienBUS().getDanhSachNhanVien());
     }
 
     /**
@@ -44,6 +60,8 @@ public class QLNV extends javax.swing.JFrame {
         buttonThem = new javax.swing.JButton();
         buttonXoa = new javax.swing.JButton();
         buttonSua = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        buttonThoat = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -79,13 +97,10 @@ public class QLNV extends javax.swing.JFrame {
         tableQLNV.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         tableQLNV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tableQLNV);
@@ -97,12 +112,43 @@ public class QLNV extends javax.swing.JFrame {
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonThem.setText("Thêm");
+        buttonThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThemActionPerformed(evt);
+            }
+        });
 
         buttonXoa.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonXoa.setText("Xóa");
+        buttonXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonXoaActionPerformed(evt);
+            }
+        });
 
         buttonSua.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonSua.setText("Sửa");
+        buttonSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSuaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton1.setText("Làm mới");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonThoat.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        buttonThoat.setText("Thoát");
+        buttonThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThoatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -116,7 +162,6 @@ public class QLNV extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(buttonTimQLNV, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
-            .addComponent(jScrollPane1)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(buttonThem)
@@ -124,7 +169,15 @@ public class QLNV extends javax.swing.JFrame {
                 .addComponent(buttonXoa)
                 .addGap(50, 50, 50)
                 .addComponent(buttonSua)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(buttonThoat)
+                .addGap(20, 20, 20))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,10 +191,14 @@ public class QLNV extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSua)
-                    .addComponent(buttonXoa)
-                    .addComponent(buttonThem))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonSua)
+                        .addComponent(buttonXoa)
+                        .addComponent(buttonThem))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(buttonThoat)))
                 .addGap(21, 21, 21))
         );
 
@@ -176,6 +233,54 @@ public class QLNV extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThemActionPerformed
+        QLNV_Them frame =new QLNV_Them();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(this);
+        
+    }//GEN-LAST:event_buttonThemActionPerformed
+
+    private void buttonThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThoatActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_buttonThoatActionPerformed
+
+    private void buttonXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonXoaActionPerformed
+       if(tableQLNV.getSelectedRow()<0)
+           JOptionPane.showMessageDialog(null,"Hãy chọn dòng muốn xóa");
+          else{
+            Object []options={"Đồng ý","Thoát"};
+            int n=JOptionPane.showOptionDialog(null,"Bạn có chắc chắn muốn xóa dữ liệu không ? ","Xóa", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+            if(n==0)//Option yes
+            {int a =tableQLNV.getSelectedRow();
+             String makh=tableQLNV.getValueAt(a, 0).toString();
+            if(new NhanVienBUS().deleteNhanVienBUS(makh))
+                {JOptionPane.showMessageDialog(null, "Xóa khách hàng thành công");
+                 loadData(dsnv = new NhanVienBUS().getDanhSachNhanVien());
+                 }
+            else 
+                 JOptionPane.showConfirmDialog(null, "Xóa thất bại");
+          }}
+        
+    }//GEN-LAST:event_buttonXoaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        loadData(dsnv = new NhanVienBUS().getDanhSachNhanVien());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void buttonSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSuaActionPerformed
+        if(tableQLNV.getSelectedRow()<0)
+           JOptionPane.showMessageDialog(null,"Hãy chọn dòng muốn sửa");
+       else {int a =tableQLNV.getSelectedRow();
+        NhanVienDTO kht=new NhanVienDTO();
+        kht.setMaNV( tableQLNV.getValueAt(a, 0).toString());
+        kht.setTenNV(tableQLNV.getValueAt(a, 1).toString());
+        kht.setGioiTinh(tableQLNV.getValueAt(a, 2).toString());
+        kht.setCMND(tableQLNV.getValueAt(a, 3).toString());
+        kht.setDiaChi(tableQLNV.getValueAt(a, 4).toString());
+        kht.setMaTK(tableQLNV.getValueAt(a, 5).toString());
+        QLNV_Sua sua=new QLNV_Sua(kht);
+    }//GEN-LAST:event_buttonSuaActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -215,8 +320,10 @@ public class QLNV extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSua;
     private javax.swing.JButton buttonThem;
+    private javax.swing.JButton buttonThoat;
     private javax.swing.JButton buttonTimQLNV;
     private javax.swing.JButton buttonXoa;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -227,4 +334,29 @@ public class QLNV extends javax.swing.JFrame {
     private javax.swing.JTable tableQLNV;
     private javax.swing.JTextField textTimKiemQLNV;
     // End of variables declaration//GEN-END:variables
+
+
+    private void loadData(ArrayList<NhanVienDTO> dskh){//Load toan bo du lieu vao table
+        tableQLNV.removeAll();
+       String []colsName = {"Mã nhân viên","Họ tên","Giới tính","CMND","Địa chỉ","Mã tài khoản"};
+       model.setColumnIdentifiers(colsName);
+       model.setRowCount(0);
+        for(NhanVienDTO kht :dskh)
+        {
+            String row[];
+            row = new String[6];
+            row[0] = kht.getMaNV();
+            row[1] = kht.getTenNV();
+            row[2] = kht.getGioiTinh();
+            row[3] = kht.getCMND();
+            row[4] = kht.getDiaChi();
+            row[5] = kht.getMaTK();
+            model.addRow(row);   
+        }
+        tableQLNV.setModel(model); 
+    }
+
+
+
+
 }

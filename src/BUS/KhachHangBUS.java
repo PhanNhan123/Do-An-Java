@@ -53,4 +53,16 @@ public class KhachHangBUS {
         return true;
     return false;
     }
+    public boolean updateKhachHangBUS(KhachHangDTO a){
+    
+    KhachHangDAO khd = new KhachHangDAO();
+    if(khd.updateKhachHang(a))
+        return true;
+    return false;}
+    
+    
+     public ArrayList<KhachHangDTO> getSearch(String a)
+    {   
+        return KhachHangDAO.SearchKhachHang(a);
+    }
 }
