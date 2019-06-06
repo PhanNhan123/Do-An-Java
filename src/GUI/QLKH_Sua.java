@@ -26,6 +26,7 @@ public class QLKH_Sua extends javax.swing.JFrame {
         this.textDiaChi.setText(a.getDiaChi());
         this.textSDT.setText(a.getSDT());
         this.jComboBox.setSelectedItem(a.getGioiTinh());
+        
         this.textMaKH.setEditable(false);
        
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -243,7 +244,7 @@ public class QLKH_Sua extends javax.swing.JFrame {
     private void buttonCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCapNhatActionPerformed
         
         if(this.updateKhachHang()==1)
-            this.dispose();
+            this.dispose();// thoat frame hien tai
         
     }//GEN-LAST:event_buttonCapNhatActionPerformed
 

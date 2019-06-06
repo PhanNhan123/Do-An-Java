@@ -85,10 +85,9 @@ public class KhachHangDAO {
          
         try 
         {
-            String sql = " select * from KhachHang where MaKH='"+a+"'"; 
+            String sql = " select * from KhachHang where MaKH like'%"+a+"%' or GioiTinh like '"+a+"%'or TenKH like '%"+a+"%'or DiaChi like '%"+a+"%'or SDT like '%"+a+"%'"; 
             DataAccessHelper helper = new DataAccessHelper();
             helper.open();
-            
             ResultSet rs = helper.excuteQuery(sql); 
             
             while(rs.next())
@@ -111,6 +110,8 @@ public class KhachHangDAO {
  public boolean updateKhachHang(KhachHangDTO a){
       String sql = "update khachhang set GioiTinh='"+a.getGioiTinh()+"', TenKH='"+a.getTenKH()+"',DiaChi='"+a.getDiaChi()+"',SDT='"+a.getSDT()+"' where MaKH ='"+a.getMaKH()+"'"; 
       DataAccessHelper helper = new DataAccessHelper();
+      
+      
       
       try
       {

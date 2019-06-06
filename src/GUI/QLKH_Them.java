@@ -301,7 +301,6 @@ public class QLKH_Them extends javax.swing.JFrame {
         if(khb.addKhachHangBUS(kh))
         {
             JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
-            
             return 1;
         }
         JOptionPane.showMessageDialog(null, "Thêm khách hàng thất bại");

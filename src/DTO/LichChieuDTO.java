@@ -12,25 +12,25 @@ import java.sql.Date;
  * @author Dell
  */
 public class LichChieuDTO {
-    private Date NgayChieu;
-    private int BuoiChieu;
+    private String NgayChieu;
+    private String BuoiChieu;
     private String MaPhim;
     private String MaPhong;
     private String MaLV;
     
-     public void setNgayChieu(Date NgayChieu)
+     public void setNgayChieu(String NgayChieu)
     {
         this.NgayChieu=NgayChieu;
     }
-    public Date getNgayChieu()
+    public String getNgayChieu()
     {
            return this.NgayChieu ;     
     }
-     public void setBuoiChieu(int BuoiChieu)
+     public void setBuoiChieu(String BuoiChieu)
     {
         this.BuoiChieu=BuoiChieu;
     }
-    public int getBuoiChieu()
+    public String getBuoiChieu()
     {
            return this.BuoiChieu;     
     }

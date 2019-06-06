@@ -109,6 +109,11 @@ public class QLNV extends javax.swing.JFrame {
 
         buttonTimQLNV.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonTimQLNV.setText("Tìm");
+        buttonTimQLNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTimQLNVActionPerformed(evt);
+            }
+        });
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonThem.setText("Thêm");
@@ -279,8 +284,18 @@ public class QLNV extends javax.swing.JFrame {
         kht.setDiaChi(tableQLNV.getValueAt(a, 4).toString());
         kht.setMaTK(tableQLNV.getValueAt(a, 5).toString());
         QLNV_Sua sua=new QLNV_Sua(kht);
+        }
     }//GEN-LAST:event_buttonSuaActionPerformed
-    }
+    
+    private void buttonTimQLNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimQLNVActionPerformed
+        String a =textTimKiemQLNV.getText();
+        ArrayList <NhanVienDTO> ls =new NhanVienBUS().getSearch(a);
+        loadData(ls);
+
+    }//GEN-LAST:event_buttonTimQLNVActionPerformed
+    
+    
+    
     /**
      * @param args the command line arguments
      */

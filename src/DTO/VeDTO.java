@@ -11,8 +11,8 @@ package DTO;
  */
 public class VeDTO {
     private String maVe;
-    private int giaVe;
-    private int soLuong;
+    private String giaVe;
+    private String soLuong;
     private String maLV;
     public String getMaVe()
     {
@@ -22,19 +22,19 @@ public class VeDTO {
     {
         this.maVe = maVe;
     }
-    public int getGiaVe()
+    public String getGiaVe()
     {
         return giaVe;
     }
-    public void setGiaVe(int giaVe)
+    public void setGiaVe(String giaVe)
     {
         this.giaVe = giaVe;
     }
-    public int getSoLuong()
+    public String getSoLuong()
     {
         return soLuong;
     }
-    public void setSoLuong(int soLuong)
+    public void setSoLuong(String soLuong)
     {
         this.soLuong = soLuong;
     }

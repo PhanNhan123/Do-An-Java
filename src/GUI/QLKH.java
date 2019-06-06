@@ -10,7 +10,7 @@ import BUS.KhachHangBUS;
 import GUI.QLKH_Them;
 import java.util.ArrayList;
 import java.util.Vector;
-import javax.swing.JFrame;
+import javax.swing.JFrame; 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
@@ -239,7 +239,6 @@ public class QLKH extends javax.swing.JFrame {
 
     private void buttonTimQLKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimQLKHActionPerformed
       DefaultTableModel table =(DefaultTableModel) table1.getModel();
-        
         ArrayList<KhachHangDTO> ls=new KhachHangBUS().getSearch(textTimKiemQLKH.getText());
         loadData(ls);
     }//GEN-LAST:event_buttonTimQLKHActionPerformed
@@ -259,9 +258,10 @@ public class QLKH extends javax.swing.JFrame {
             Object []options={"Đồng ý","Thoát"};
             int n=JOptionPane.showOptionDialog(null,"Bạn có chắc chắn muốn xóa dữ liệu không ? ","Xóa", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
             if(n==0)//Option yes
-            {int a =table1.getSelectedRow();
-             String makh=table1.getValueAt(a, 0).toString();
-            if(new KhachHangBUS().deleteKhachHangBUS(makh))
+            {
+                int a =table1.getSelectedRow();
+                String makh=table1.getValueAt(a, 0).toString();
+                if(new KhachHangBUS().deleteKhachHangBUS(makh))
                 {JOptionPane.showMessageDialog(null, "Xóa khách hàng thành công");
                  loadData(dskh = new KhachHangBUS().getDanhSachKhachHang());
                  }
@@ -322,7 +322,7 @@ public class QLKH extends javax.swing.JFrame {
    
 
     private void loadData(ArrayList<KhachHangDTO> dskh){//Load toan bo du lieu vao table
-        table1.removeAll();
+       table1.removeAll();
        String []colsName = {"Mã Khách Hàng","Giới tính","Họ tên","Địa chỉ","Số điện thoại"};
        model.setColumnIdentifiers(colsName);
        model.setRowCount(0);

@@ -87,7 +87,7 @@ public class NhanVienDAO {
          
         try 
         {
-            String sql = " select * from NhanVien where MaNV='"+a+"'"; 
+            String sql = " select * from NhanVien where MaNV='%"+a+"%' or GioiTinh like '"+a+"%' or TenNV like '%"+a+"%' or CMND like '%"+a+"%' or DiaChi like '%"+a+"%' or MaTK like '"+a+"%'"; 
             DataAccessHelper helper = new DataAccessHelper();
             helper.open();
             
