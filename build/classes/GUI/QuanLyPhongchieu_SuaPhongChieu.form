@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                   <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
           </Group>
+          <Component id="jPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -126,24 +126,34 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="labelTenphong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelMaphong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelKichthuoc" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelSoluongghe" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelMaychieu" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelAmthanh" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="textfieldMaphong" alignment="0" pref="317" max="32767" attributes="0"/>
-                      <Component id="textfieldTenphong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldKichthuoc" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldSoluongghe" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldMaychieu" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldAmthanh" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="labelTenphong" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelMaphong" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelKichthuoc" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelSoluongghe" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelMaychieu" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelAmthanh" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="textMaPhong" alignment="0" pref="317" max="32767" attributes="0"/>
+                              <Component id="textTenPhong" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textKichThuoc" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textSoLuongGhe" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textMayChieu" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textAmThanh" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                          <Component id="buttonCapnhat" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="buttonHuy" min="-2" pref="88" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -155,34 +165,41 @@
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelMaphong" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaphong" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textMaPhong" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelTenphong" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldTenphong" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textTenPhong" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelKichthuoc" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldKichthuoc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textKichThuoc" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelSoluongghe" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldSoluongghe" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textSoLuongGhe" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelMaychieu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaychieu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelMaychieu" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                          <Component id="textMayChieu" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelAmthanh" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldAmthanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="labelAmthanh" min="-2" max="-2" attributes="0"/>
+                      <Component id="textAmThanh" min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="63" max="32767" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="buttonCapnhat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonHuy" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -236,17 +253,69 @@
             <Property name="text" type="java.lang.String" value="&#xc2;m thanh"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaphong">
+        <Component class="javax.swing.JTextField" name="textMaPhong">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldTenphong">
+        <Component class="javax.swing.JTextField" name="textTenPhong">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldKichthuoc">
+        <Component class="javax.swing.JTextField" name="textKichThuoc">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldSoluongghe">
+        <Component class="javax.swing.JTextField" name="textSoLuongGhe">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaychieu">
+        <Component class="javax.swing.JTextField" name="textMayChieu">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldAmthanh">
+        <Component class="javax.swing.JTextField" name="textAmThanh">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonCapnhat">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t "/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCapnhatActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonHuy">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hu&#x1ef7;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHuyActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

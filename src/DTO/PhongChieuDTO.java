@@ -12,8 +12,8 @@ package DTO;
 public class PhongChieuDTO {
     private String MaPhong;
     private String TenPhong;
-    private int KichThuoc;
-    private int SoLuongGhe;
+    private String KichThuoc;
+    private String SoLuongGhe;
     private String MayChieu;
     private String AmThanh;
     
@@ -25,7 +25,7 @@ public class PhongChieuDTO {
     {
            return this.MaPhong;     
     }
-     public void setTenPhong(String MaPhong)
+     public void setTenPhong(String TenPhong)
     {
         this.TenPhong=TenPhong;
     }
@@ -33,19 +33,19 @@ public class PhongChieuDTO {
     {
            return this.TenPhong;     
     }
-     public void setKichThuoc(int KichThuoc)
+     public void setKichThuoc(String KichThuoc)
     {
         this.KichThuoc=KichThuoc;
     }
-    public int get()
+    public String getKichThuoc()
     {
            return this.KichThuoc;     
     }
-     public void setSoLuongGhe(int SoluongGhe)
+     public void setSoLuongGhe(String SoluongGhe)
     {
         this.SoLuongGhe=SoluongGhe;
     }
-    public int getSoLuongGhe()
+    public String getSoLuongGhe()
     {
            return this.SoLuongGhe;     
     }

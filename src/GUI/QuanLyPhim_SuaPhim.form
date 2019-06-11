@@ -135,7 +135,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="labelMaphim" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="labelThoigian" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="labelGhichu" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelTenPhim" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="labelĐaodien" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="labelDienvien" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="labelNamSX" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -144,14 +144,14 @@
                   </Group>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="textfieldMaphim" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldThoigian" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldGhichu" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldDaodien" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfielđDienvien" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldNamsanxuat" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldNuocsanxuat" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldMaloaiphim" pref="540" max="32767" attributes="0"/>
+                      <Component id="textMaPhim" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textTenPhim" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textDaoDien" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textDienVien" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textNamSX" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textNuocSX" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textMaLP" pref="540" max="32767" attributes="0"/>
+                      <Component id="chooser" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
@@ -163,42 +163,42 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelMaphim" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaphim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textMaPhim" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelThoigian" min="-2" max="-2" attributes="0"/>
+                      <Component id="chooser" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelThoigian" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldThoigian" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelGhichu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldGhichu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelTenPhim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textTenPhim" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelĐaodien" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldDaodien" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textDaoDien" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelDienvien" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfielđDienvien" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textDienVien" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNamSX" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldNamsanxuat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textNamSX" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNươcSX" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldNuocsanxuat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textNuocSX" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelMaLP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaloaiphim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textMaLP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
               </Group>
@@ -222,7 +222,7 @@
             <Property name="text" type="java.lang.String" value="Th&#x1edd;i gian"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelGhichu">
+        <Component class="javax.swing.JLabel" name="labelTenPhim">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
@@ -270,57 +270,62 @@
             <Property name="text" type="java.lang.String" value="M&#xe3; lo&#x1ea1;i phim "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaphim">
+        <Component class="javax.swing.JTextField" name="textMaPhim">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldThoigian">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textfieldGhichu">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldGhichuActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textfieldDaodien">
+        <Component class="javax.swing.JTextField" name="textTenPhim">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldDaodienActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textTenPhimActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfiel&#x111;Dienvien">
+        <Component class="javax.swing.JTextField" name="textDaoDien">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textDaoDienActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textDienVien">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldNamsanxuat">
+        <Component class="javax.swing.JTextField" name="textNamSX">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldNuocsanxuat">
+        <Component class="javax.swing.JTextField" name="textNuocSX">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaloaiphim">
+        <Component class="javax.swing.JTextField" name="textMaLP">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="chooser">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
@@ -379,6 +384,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCapnhatActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonHuy">
           <Properties>

@@ -96,7 +96,7 @@ public class DangNhap extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        JLabelUser.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        JLabelUser.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         JLabelUser.setText("Username");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -108,6 +108,8 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 83, 0, 0);
         jPanel2.add(JLabelUser, gridBagConstraints);
+
+        textUser.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -117,7 +119,7 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(7, 5, 0, 51);
         jPanel2.add(textUser, gridBagConstraints);
 
-        JLabelPass.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        JLabelPass.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         JLabelPass.setText("Password");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -129,6 +131,8 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(7, 83, 0, 0);
         jPanel2.add(JLabelPass, gridBagConstraints);
+
+        textPass.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -138,6 +142,7 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 5, 0, 51);
         jPanel2.add(textPass, gridBagConstraints);
 
+        buttonCancel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonCancel.setText("Cancel");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -146,6 +151,7 @@ public class DangNhap extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(38, 105, 50, 0);
         jPanel2.add(buttonCancel, gridBagConstraints);
 
+        buttonOK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         buttonOK.setText("OK");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -173,40 +179,7 @@ public class DangNhap extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DangNhap().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabelPass;

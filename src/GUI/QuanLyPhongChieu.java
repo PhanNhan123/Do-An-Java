@@ -1,21 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI;
 
-/**
- *
- * @author phannhan
- */
-public class QuanLyPhongChieu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form QuanLyPhongChieu
-     */
+import BUS.PhongChieuBUS;
+import DTO.PhongChieuDTO;
+import javax.swing.JLabel;
+import GUI.QuanLyPhongchieu_SuaPhongChieu;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+public class QuanLyPhongChieu extends javax.swing.JFrame {
+    private ArrayList<PhongChieuDTO> dspc;
+    public static String MaPhong;
+    public static DefaultTableModel model =new DefaultTableModel(); 
+    
     public QuanLyPhongChieu() {
         initComponents();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        loadData(dspc = new PhongChieuBUS().getDanhSachPhongChieu());
     }
 
     /**
@@ -31,15 +38,17 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
         labelQLPC = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         labelDSPC = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textTim = new javax.swing.JTextField();
         buttonTim = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         buttonThem = new javax.swing.JButton();
         buttonXoa = new javax.swing.JButton();
         buttonSua = new javax.swing.JButton();
+        buttonLammoi = new javax.swing.JButton();
+        buttonThoat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +77,7 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
         labelDSPC.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         labelDSPC.setText("Danh Sách Phòng Chiếu ");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        textTim.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
         buttonTim.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonTim.setText("Tìm ");
@@ -86,7 +95,7 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelDSPC, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textTim, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonTim)
                 .addGap(31, 31, 31))
@@ -97,12 +106,12 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDSPC, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonTim))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -113,7 +122,7 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -131,12 +140,43 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonThem.setText("Thêm");
+        buttonThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThemActionPerformed(evt);
+            }
+        });
 
         buttonXoa.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonXoa.setText("Xoá");
+        buttonXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonXoaActionPerformed(evt);
+            }
+        });
 
         buttonSua.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonSua.setText("Sửa ");
+        buttonSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSuaActionPerformed(evt);
+            }
+        });
+
+        buttonLammoi.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        buttonLammoi.setText("Làm mới");
+        buttonLammoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLammoiActionPerformed(evt);
+            }
+        });
+
+        buttonThoat.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        buttonThoat.setText("Thoát");
+        buttonThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThoatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -149,17 +189,28 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
                 .addComponent(buttonXoa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonSua)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonLammoi)
+                .addGap(18, 18, 18)
+                .addComponent(buttonThoat)
+                .addGap(39, 39, 39))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonThem)
-                    .addComponent(buttonXoa)
-                    .addComponent(buttonSua))
-                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonThem)
+                            .addComponent(buttonXoa)
+                            .addComponent(buttonSua))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonLammoi)
+                            .addComponent(buttonThoat))
+                        .addGap(21, 21, 21))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,12 +245,65 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimActionPerformed
-        // TODO add your handling code here:
+         DefaultTableModel table =(DefaultTableModel) table1.getModel();
+        ArrayList<PhongChieuDTO> ls=new PhongChieuBUS().getSearch(textTim.getText());
+        loadData(ls);
     }//GEN-LAST:event_buttonTimActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void buttonThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThoatActionPerformed
+               this.dispose();
+
+    }//GEN-LAST:event_buttonThoatActionPerformed
+
+    private void buttonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThemActionPerformed
+        QuanLyPhongChieu_ThemPhongChieu frame =new QuanLyPhongChieu_ThemPhongChieu();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(this);
+        
+    }//GEN-LAST:event_buttonThemActionPerformed
+
+    private void buttonXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonXoaActionPerformed
+       if(table1.getSelectedRow()<0)
+           JOptionPane.showMessageDialog(null,"Hãy chọn dòng muốn xóa");
+          else{
+            Object []options={"Đồng ý","Thoát"};
+            int n=JOptionPane.showOptionDialog(null,"Bạn có chắc chắn muốn xóa dữ liệu không ? ","Xóa", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+            if(n==0)//Option yes
+            {   try {
+                int a =table1.getSelectedRow();
+                String MaPhong =table1.getValueAt(a, 0).toString();
+                if(new PhongChieuBUS().deletePhongChieuBUS(MaPhong))
+                {JOptionPane.showMessageDialog(null, "Xóa  thành công");
+                loadData(dspc = new PhongChieuBUS().getDanhSachPhongChieu());
+                }
+                else
+                    JOptionPane.showConfirmDialog(null, "Xóa thất bại");
+                } catch (SQLException ex) {
+                    Logger.getLogger(QuanLyPhongChieu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+          }}
+    }//GEN-LAST:event_buttonXoaActionPerformed
+
+    private void buttonSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSuaActionPerformed
+        if(table1.getSelectedRow()<0)
+          JOptionPane.showMessageDialog(null,"Hãy chọn dòng muốn sửa");
+       else {int a =table1.getSelectedRow();
+        PhongChieuDTO pct=new PhongChieuDTO();
+        pct.setMaPhong( table1.getValueAt(a, 0).toString());
+        pct.setTenPhong(table1.getValueAt(a, 1).toString());
+        pct.setKichThuoc(table1.getValueAt(a, 2).toString());
+        pct.setSoLuongGhe(table1.getValueAt(a, 3).toString());
+        pct.setMayChieu( table1.getValueAt(a, 4).toString());
+        pct.setAmThanh(table1.getValueAt(a,5).toString()); 
+        QuanLyPhongchieu_SuaPhongChieu sua=new QuanLyPhongchieu_SuaPhongChieu(pct);
+        }
+    }//GEN-LAST:event_buttonSuaActionPerformed
+
+    private void buttonLammoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLammoiActionPerformed
+       loadData(dspc = new PhongChieuBUS().getDanhSachPhongChieu());
+    }//GEN-LAST:event_buttonLammoiActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -233,8 +337,10 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonLammoi;
     private javax.swing.JButton buttonSua;
     private javax.swing.JButton buttonThem;
+    private javax.swing.JButton buttonThoat;
     private javax.swing.JButton buttonTim;
     private javax.swing.JButton buttonXoa;
     private javax.swing.JPanel jPanel1;
@@ -242,9 +348,29 @@ public class QuanLyPhongChieu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelDSPC;
     private javax.swing.JLabel labelQLPC;
+    private javax.swing.JTable table1;
+    private javax.swing.JTextField textTim;
     // End of variables declaration//GEN-END:variables
+ private void loadData(ArrayList<PhongChieuDTO> dspc){//Load toan bo du lieu vao table
+       table1.removeAll();
+       String []colsName = {"Mã phòng chiếu ","Tên phòng chiếu","Kích thước","Số lượng ghế","Máy chiếu","Âm thanh"};
+       model.setColumnIdentifiers(colsName);
+       model.setRowCount(0);
+        for(PhongChieuDTO pct :dspc)
+        {
+            String row[];
+            row = new String[6];
+            row[0] = pct.getMaPhong();
+            row[1] = pct.getTenPhong();
+            row[2] = pct.getKichThuoc();
+            row[3] = pct.getSoLuongGhe();
+            row[4] = pct.getMayChieu();
+            row[5] = pct.getAmThanh(); 
+            model.addRow(row);   
+        }
+        table1.setModel(model); 
+    }
 }
+

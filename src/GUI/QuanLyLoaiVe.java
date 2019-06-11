@@ -356,8 +356,6 @@ private void loadTimKiemData(String key)
          row[0] = lvt.getMaLV();
          row[1] = lvt.getTenLV();
          model.addRow(row);
-     
-     
      }
  
 

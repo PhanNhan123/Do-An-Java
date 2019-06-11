@@ -14,7 +14,7 @@ public class KhachHangDAO {
          
         try 
         {
-            String sql = " select * from KhachHang"; 
+            String sql = "select * from KhachHang"; 
             DataAccessHelper helper = new DataAccessHelper();
             helper.open();
             
@@ -128,24 +128,7 @@ public class KhachHangDAO {
             return false;
       }
       
-//            helper.open();
-//        ResultSet rs = helper.excuteQuery(sql);
-//        
-//        try {
-//            
-//        while(rs.next()) {
-//            System.out.println(rs.getString("MaNV"));
-//            System.out.println(rs.getString("TenNV"));
-//            
-//        }
-//        } catch(SQLException e) {
-//            helper.displayError(e);
-//        }
-//        
-//        
-//        helper.close();
-//        }
-            
+
             
 }     
  

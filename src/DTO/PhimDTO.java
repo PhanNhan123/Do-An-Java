@@ -13,8 +13,8 @@ import java.sql.Date;
  */
 public class PhimDTO {
     private String MaPhim;
-    private Date ThoiGian;
-    private String GhiChu;
+    private String ThoiGian;
+    private String TenPhim;
     private String DaoDien;
     private String DienVien;
     private String NamSX;
@@ -29,21 +29,21 @@ public class PhimDTO {
     {
          return this.MaPhim;
     }
-     public void setThoiGian(Date ThoiGian)
+     public void setThoiGian(String ThoiGian)
     {
         this.ThoiGian=ThoiGian;
     }
-    public Date getThoiGian()
+    public String getThoiGian()
     {
            return this.ThoiGian;     
     }
-     public void setGhiChu(String GhiChu)
+     public void setTenPhim(String TenPhim)
     {
-        this.GhiChu=GhiChu;
+        this.TenPhim=TenPhim;
     }
-    public String getGhiChu()
+    public String getTenPhim()
     {
-           return this.GhiChu;     
+           return this.TenPhim;     
     }   
      public void setDaoDien(String DaoDien)
     {
@@ -62,15 +62,15 @@ public class PhimDTO {
     {
            return this.DienVien;     
     }
-     public void setNamSX( String NamSX)
+     public void setNamSX( String  NamSX)
     {
-        this.NamSX=NamSX;
+        this.NamSX= NamSX;
     }
-    public String getNamSX()
+    public  String getNamSX()
     {
-           return this.NamSX;     
+           return this.NamSX;
     }
-     public void setNuocSX(String NuocSX)
+     public void setNuocSX( String NuocSX)
     {
         this.NuocSX=NuocSX;
                 
@@ -84,7 +84,7 @@ public class PhimDTO {
         this.MaLP=MaLP;
                
     }
-    public String get()
+    public String getMaLP()
     {
            return this.MaLP;     
     }

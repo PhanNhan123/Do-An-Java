@@ -10,50 +10,69 @@ import java.util.Date;
  * @author HP
  */
 public class VeBanDTO {
-    private String maVe;
-    private String maPhim;
-    private String maPhong;
-    private String tenPhim;
-    private String maKH;
-    private Date ngayBan;
+    private String MaVe;
+    private String MaPhim;
+    private String MaPhong;
+    private String MaKH;
+    private String  NgayBan;
+    private String TongGiaVe;
+    private String SoLuong; 
+    public String getSoLuong()
+    {
+        return SoLuong; 
+    }       
+    public void setSoLuong(String SoLuong)
+    {
+        this.SoLuong = SoLuong;
+    }
+      
+    public String getTongGiaVe()
+    {
+        return TongGiaVe; 
+    }
+    public void setTongGiaVe(String GiaVe)
+    {
+        this.TongGiaVe=GiaVe; 
+    }
+    public String getNgayBan()
+    {
+        return NgayBan; 
+    }
+    public void setNgayBan(String NgayBan)
+    {
+        this.NgayBan= NgayBan; 
+    }
     public String getMaVe()
     {
-        return maVe;
+        return MaVe;
     }
-    public void setMaVe(String maVe)
+    public void setMaVe(String MaVe)
     {
-        this.maVe = maVe;
+        this.MaVe = MaVe;
     }
     public String getMaPhim()
     {
-        return maPhim;
+        return MaPhim;
     }
-    public void setMaPhim(String maPhim)
+    public void setMaPhim(String MaPhim)
     {
-        this.maPhim = maPhim;
+        this.MaPhim = MaPhim;
     }
     public String getMaPhong()
     {
-        return maPhong;
+        return MaPhong;
     }
-    public void setMaPhong(String maPhong)
+    public void setMaPhong(String MaPhong)
     {
-        this.maPhong = maPhong;
+        this.MaPhong = MaPhong;
     }
-    public String getTenPhim()
-    {
-        return tenPhim;
-    }
-    public void setTenPhim(String tenPhim)
-    {
-        this.tenPhim = tenPhim;
-    }
+
     public String getMaKH()
     {
-        return maKH;
+        return MaKH;
     }
     public void setMaKH(String MaKH)
     {
-        this.maKH = maKH;
+        this.MaKH = MaKH;
     }
 }

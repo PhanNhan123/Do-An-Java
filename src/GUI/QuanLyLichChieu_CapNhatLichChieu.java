@@ -7,7 +7,7 @@ package GUI;
 
 import BUS.LichChieuBUS;
 import DTO.LichChieuDTO;
-import static GUI.QuanLiLichChieu.baseLC;
+
 import javax.swing.JOptionPane;
 
 /**

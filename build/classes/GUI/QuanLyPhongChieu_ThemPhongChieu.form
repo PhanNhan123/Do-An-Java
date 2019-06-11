@@ -102,12 +102,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="textfieldMaphong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldTenphong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldKichthuoc" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldSoluongghe" alignment="0" max="32767" attributes="0"/>
-                      <Component id="textfieldMaychieu" alignment="0" pref="522" max="32767" attributes="0"/>
-                      <Component id="textfieldAmthanh" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textMaPhong" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textTenPhong" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textKichThuoc" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textSoLuongGhe" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textMayChieu" alignment="0" pref="522" max="32767" attributes="0"/>
+                      <Component id="textAmThanh" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -119,32 +119,32 @@
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelMaphong" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaphong" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textMaPhong" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelTenphong" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldTenphong" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textTenPhong" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textfieldKichthuoc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textKichThuoc" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="labelKichthuoc" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelSoluongghe" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldSoluongghe" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textSoLuongGhe" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelMaychieu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldMaychieu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textMayChieu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelAmthanh" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textfieldAmthanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textAmThanh" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -200,58 +200,61 @@
             <Property name="text" type="java.lang.String" value="&#xc2;m thanh "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaphong">
+        <Component class="javax.swing.JTextField" name="textMaPhong">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldMaphongActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textMaPhongActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldTenphong">
+        <Component class="javax.swing.JTextField" name="textTenPhong">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldTenphongActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textTenPhongActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldKichthuoc">
+        <Component class="javax.swing.JTextField" name="textKichThuoc">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldSoluongghe">
+        <Component class="javax.swing.JTextField" name="textSoLuongGhe">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldSoluonggheActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textSoLuongGheActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldMaychieu">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textfieldAmthanh">
+        <Component class="javax.swing.JTextField" name="textMayChieu">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldAmthanhActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textMayChieuActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textAmThanh">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textAmThanhActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -306,6 +309,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonThemActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonHuy">
           <Properties>
@@ -314,6 +320,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Hu&#x1ef7;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHuyActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

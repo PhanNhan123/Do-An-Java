@@ -43,6 +43,7 @@ public class ThemLichChieu extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jDialog2 = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -57,8 +58,8 @@ public class ThemLichChieu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         buttonAdd = new javax.swing.JButton();
         buttonCancel = new javax.swing.JButton();
-        dateNgayChieu = new com.toedter.calendar.JDateChooser();
         cbBuoiChieu = new javax.swing.JComboBox<>();
+        dateNgayChieu = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -157,8 +158,6 @@ public class ThemLichChieu extends javax.swing.JFrame {
             }
         });
 
-        dateNgayChieu.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-
         cbBuoiChieu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         cbBuoiChieu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sáng", "Trưa", "Chiều", "Tối" }));
 
@@ -193,8 +192,9 @@ public class ThemLichChieu extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textMaPhim, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                                     .addComponent(textMaPhong)
-                                    .addComponent(dateNgayChieu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbBuoiChieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cbBuoiChieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dateNgayChieu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(15, 15, 15))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(49, 49, 49)
@@ -208,10 +208,10 @@ public class ThemLichChieu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(dateNgayChieu, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                    .addComponent(dateNgayChieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(cbBuoiChieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,6 +293,7 @@ public class ThemLichChieu extends javax.swing.JFrame {
     private javax.swing.JButton buttonCancel;
     private javax.swing.JComboBox<String> cbBuoiChieu;
     private com.toedter.calendar.JDateChooser dateNgayChieu;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;

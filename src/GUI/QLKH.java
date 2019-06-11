@@ -292,15 +292,7 @@ public class QLKH extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_buttonThoatActionPerformed
 
-    public static void main(String args[]) {
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new QLKH().setVisible(true);
-                
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSua;

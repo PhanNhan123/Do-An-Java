@@ -5,6 +5,12 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+import DTO.PhongChieuDTO; 
+import BUS.PhongChieuBUS; 
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author phannhan
@@ -16,6 +22,8 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
      */
     public QuanLyPhongChieu_ThemPhongChieu() {
         initComponents();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,12 +44,12 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
         labelSoluongghe = new javax.swing.JLabel();
         labelMaychieu = new javax.swing.JLabel();
         labelAmthanh = new javax.swing.JLabel();
-        textfieldMaphong = new javax.swing.JTextField();
-        textfieldTenphong = new javax.swing.JTextField();
-        textfieldKichthuoc = new javax.swing.JTextField();
-        textfieldSoluongghe = new javax.swing.JTextField();
-        textfieldMaychieu = new javax.swing.JTextField();
-        textfieldAmthanh = new javax.swing.JTextField();
+        textMaPhong = new javax.swing.JTextField();
+        textTenPhong = new javax.swing.JTextField();
+        textKichThuoc = new javax.swing.JTextField();
+        textSoLuongGhe = new javax.swing.JTextField();
+        textMayChieu = new javax.swing.JTextField();
+        textAmThanh = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         labelXacnhanthemphongchieumoi = new javax.swing.JLabel();
         buttonThem = new javax.swing.JButton();
@@ -89,35 +97,40 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
         labelAmthanh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         labelAmthanh.setText("Âm thanh ");
 
-        textfieldMaphong.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        textfieldMaphong.addActionListener(new java.awt.event.ActionListener() {
+        textMaPhong.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textMaPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldMaphongActionPerformed(evt);
+                textMaPhongActionPerformed(evt);
             }
         });
 
-        textfieldTenphong.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        textfieldTenphong.addActionListener(new java.awt.event.ActionListener() {
+        textTenPhong.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textTenPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldTenphongActionPerformed(evt);
+                textTenPhongActionPerformed(evt);
             }
         });
 
-        textfieldKichthuoc.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textKichThuoc.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        textfieldSoluongghe.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        textfieldSoluongghe.addActionListener(new java.awt.event.ActionListener() {
+        textSoLuongGhe.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textSoLuongGhe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldSoluonggheActionPerformed(evt);
+                textSoLuongGheActionPerformed(evt);
             }
         });
 
-        textfieldMaychieu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-
-        textfieldAmthanh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        textfieldAmthanh.addActionListener(new java.awt.event.ActionListener() {
+        textMayChieu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textMayChieu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldAmthanhActionPerformed(evt);
+                textMayChieuActionPerformed(evt);
+            }
+        });
+
+        textAmThanh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        textAmThanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAmThanhActionPerformed(evt);
             }
         });
 
@@ -136,12 +149,12 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
                     .addComponent(labelAmthanh))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textfieldMaphong)
-                    .addComponent(textfieldTenphong)
-                    .addComponent(textfieldKichthuoc)
-                    .addComponent(textfieldSoluongghe)
-                    .addComponent(textfieldMaychieu, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
-                    .addComponent(textfieldAmthanh))
+                    .addComponent(textMaPhong)
+                    .addComponent(textTenPhong)
+                    .addComponent(textKichThuoc)
+                    .addComponent(textSoLuongGhe)
+                    .addComponent(textMayChieu, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
+                    .addComponent(textAmThanh))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -150,27 +163,27 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelMaphong)
-                    .addComponent(textfieldMaphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textMaPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTenphong)
-                    .addComponent(textfieldTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textTenPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textfieldKichthuoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textKichThuoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelKichthuoc, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSoluongghe)
-                    .addComponent(textfieldSoluongghe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textSoLuongGhe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelMaychieu)
-                    .addComponent(textfieldMaychieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textMayChieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAmthanh)
-                    .addComponent(textfieldAmthanh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textAmThanh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,9 +192,19 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
 
         buttonThem.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonThem.setText("Thêm");
+        buttonThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonThemActionPerformed(evt);
+            }
+        });
 
         buttonHuy.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         buttonHuy.setText("Huỷ");
+        buttonHuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHuyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -234,21 +257,34 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textfieldTenphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldTenphongActionPerformed
+    private void textTenPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTenPhongActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldTenphongActionPerformed
+    }//GEN-LAST:event_textTenPhongActionPerformed
 
-    private void textfieldAmthanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldAmthanhActionPerformed
+    private void textAmThanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAmThanhActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldAmthanhActionPerformed
+    }//GEN-LAST:event_textAmThanhActionPerformed
 
-    private void textfieldSoluonggheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldSoluonggheActionPerformed
+    private void textSoLuongGheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSoLuongGheActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldSoluonggheActionPerformed
+    }//GEN-LAST:event_textSoLuongGheActionPerformed
 
-    private void textfieldMaphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldMaphongActionPerformed
+    private void textMaPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMaPhongActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldMaphongActionPerformed
+    }//GEN-LAST:event_textMaPhongActionPerformed
+
+    private void buttonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThemActionPerformed
+            this.addPhongChieu(); //Xu ly su kien Them
+            this.dispose();
+    }//GEN-LAST:event_buttonThemActionPerformed
+
+    private void buttonHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHuyActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_buttonHuyActionPerformed
+
+    private void textMayChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMayChieuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textMayChieuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,11 +335,53 @@ public class QuanLyPhongChieu_ThemPhongChieu extends javax.swing.JFrame {
     private javax.swing.JLabel labelTenphong;
     private javax.swing.JLabel labelThemphongchieu;
     private javax.swing.JLabel labelXacnhanthemphongchieumoi;
-    private javax.swing.JTextField textfieldAmthanh;
-    private javax.swing.JTextField textfieldKichthuoc;
-    private javax.swing.JTextField textfieldMaphong;
-    private javax.swing.JTextField textfieldMaychieu;
-    private javax.swing.JTextField textfieldSoluongghe;
-    private javax.swing.JTextField textfieldTenphong;
+    private javax.swing.JTextField textAmThanh;
+    private javax.swing.JTextField textKichThuoc;
+    private javax.swing.JTextField textMaPhong;
+    private javax.swing.JTextField textMayChieu;
+    private javax.swing.JTextField textSoLuongGhe;
+    private javax.swing.JTextField textTenPhong;
     // End of variables declaration//GEN-END:variables
+ public  void addPhongChieu()
+    {
+
+        PhongChieuBUS pcb=new PhongChieuBUS();
+        PhongChieuDTO pc=new PhongChieuDTO();//Tao 1 phòng chiếu moi va gan cac gia tri vao no
+        pc.setMaPhong(textMaPhong.getText());
+        pc.setTenPhong(textTenPhong.getText());
+        pc.setKichThuoc(textKichThuoc.getText());
+        pc.setSoLuongGhe(textSoLuongGhe.getText());
+        pc.setMayChieu(textMayChieu.getText());
+        pc.setAmThanh(textAmThanh.getText());
+        if(pcb.KTTrong(pc)==true){
+            JOptionPane.showMessageDialog(null, "Không được để trống các trường dữ liệu");
+            
+        }
+//        for(PhongChieuDTO kht :dspc)//Kiem tra phong chieu moi co trùng với các khach hàng cũ k 
+//        {
+            if(pcb.KTTrung(pc))
+            {
+                JOptionPane.showMessageDialog(null, "Thêm thất bại! Nhập trùng MaPhong khóa chính");
+               
+            } 
+        
+        else
+                if(pcb.addPhongChieuBUS(pc))
+        {
+            JOptionPane.showMessageDialog(null, "Thêm phòng chiếu thành công");
+            
+           
+        }
+            else
+        JOptionPane.showMessageDialog(null, "Thêm phòng chiếu thất bại");
+        
+        
+    }
+    
+    
+    
+    
 }
+
+
+
