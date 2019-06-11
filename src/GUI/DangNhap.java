@@ -13,6 +13,8 @@ import DTO.TaiKhoanDTO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import util.LuuTaiKhoan;
+import static util.LuuTaiKhoan.*;
 
 /**
  *
@@ -200,6 +202,9 @@ public class DangNhap extends javax.swing.JFrame {
         for(TaiKhoanDTO taiKhoan : dsTaiKhoan) {
             if(taiKhoan.getTenTK().equals(textUser.getText()) && taiKhoan.getMatKhau().equals(textPass.getText())) {
                 { JOptionPane.showMessageDialog(this,"Đăng nhập thành công");
+                    daDangNhap = true;
+                    LuuTaiKhoan.taiKhoan = taiKhoan;
+                    this.dispose();
                    return 1;
                 }
             }
@@ -221,7 +226,10 @@ public class DangNhap extends javax.swing.JFrame {
          
          @Override
          public void actionPerformed(ActionEvent e) {
-             KTDangNhap();
+             if(KTDangNhap() == 1) {
+                 new TrangChu().setVisible(true);
+                 
+             }
          }
      });
  }

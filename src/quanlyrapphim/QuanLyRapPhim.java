@@ -23,14 +23,11 @@ import javax.swing.*;
  * @author Dell
  */
 public class QuanLyRapPhim {
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
-        QLKH kh=new QLKH();
-         
+        new DangNhap().setVisible(true);
     }
     
 }

@@ -289,6 +289,7 @@ public class QLKH extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void buttonThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonThoatActionPerformed
+        new TrangChu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonThoatActionPerformed
 

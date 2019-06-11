@@ -3,53 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/ThemLichChieu.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyLoaiVe_ThemLoaiVe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/ThongKe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/NhanVienDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/ThongKe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/PhimBUS.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/VeDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/LoaiVeDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLNV.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/KhachHangDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyPhim_SuaPhim.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyBanVe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyPhim_ThemPhim.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLKH_Sua.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/LoaiVeDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyLichChieu_CapNhatLichChieu.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLiLichChieu.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/KhachHangDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/LichChieuDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/LoaiPhimDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyVe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLKH_Them.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/LichChieuDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyPhongChieu_XoaPhongChieu.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLNV_Them.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/TaiKhoanDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLKH.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/VeBanDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyLoaiVe_CapNhatLoaiVe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/quanlyrapphim/QuanLyRapPhim.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/VeBanDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyLoaiVe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/LichChieuBUS.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyPhim.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyBanVe_Sua.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QLNV_Sua.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyBanVe_Them.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/KhachHangBUS.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/QuanLyPhongChieu.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/TaiKhoanBUS.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/VeBanBUS.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/PhimDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/GUI/DangNhap.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DTO/VeDTO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/util/DataAccessHelper.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/DAO/PhimDAO.java</file>
-            <file>file:/C:/Users/Dell/Desktop/doanjava/Do-An-Java/src/BUS/VeBUS.java</file>
+            <file>file:/C:/Users/Duong%20Mau/Desktop/New%20folder%20(4)/Do-An-Java/src/quanlyrapphim/QuanLyRapPhim.java</file>
+            <file>file:/C:/Users/Duong%20Mau/Desktop/New%20folder%20(4)/Do-An-Java/src/util/LuuTaiKhoan.java</file>
+            <file>file:/C:/Users/Duong%20Mau/Desktop/New%20folder%20(4)/Do-An-Java/src/GUI/TrangChu.java</file>
+            <file>file:/C:/Users/Duong%20Mau/Desktop/New%20folder%20(4)/Do-An-Java/src/GUI/DangNhap.java</file>
+            <file>file:/C:/Users/Duong%20Mau/Desktop/New%20folder%20(4)/Do-An-Java/src/GUI/QLKH.java</file>
         </group>
     </open-files>
 </project-private>

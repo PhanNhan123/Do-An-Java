@@ -16,7 +16,7 @@ public class DataAccessHelper {//Lop de dong mo connection
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager
-                  .getConnection("jdbc:mysql://localhost:3306/qlrp","root","sasa");  //Sua code database , user va password o day nha :)
+                  .getConnection("jdbc:mysql://localhost:3306/qlrp","root","123123Mau");  //Sua code database , user va password o day nha :)
         } catch (Exception e) {
             e.printStackTrace();
         }
